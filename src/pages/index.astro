@@ -1,0 +1,158 @@
+---
+const stories = [
+  {
+    name: "Grace",
+    stage: "Recovery",
+    location: "Nairobi",
+    summary:
+      "Grace found support through counseling, family care, and a local recovery group. Her story shows that recovery is possible one day at a time.",
+  },
+  {
+    name: "Brian",
+    stage: "Seeking help",
+    location: "Kiambu",
+    summary:
+      "Brian is learning to rebuild trust, avoid harmful environments, and ask for help before things become overwhelming.",
+  },
+  {
+    name: "Amina",
+    stage: "Supporting others",
+    location: "Mombasa",
+    summary:
+      "After recovery, Amina now encourages young people to speak early, seek safe help, and believe they are not alone.",
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Fuzzy Waddle | Recovery Stories</title>
+    <meta
+      name="description"
+      content="Stories of vulnerable people recovering from drug use, seeking support, and rebuilding their lives."
+    />
+  </head>
+
+  <body>
+    <main>
+      <section class="hero">
+        <p class="eyebrow">Recovery stories</p>
+        <h1>Real stories. Human dignity. Hope after drugs.</h1>
+        <p>
+          A simple public site for sharing careful, respectful stories from people affected by drug use,
+          recovery, and community support.
+        </p>
+        <a href="#stories">Read stories</a>
+      </section>
+
+      <section id="stories" class="stories">
+        <h2>Featured stories</h2>
+
+        <div class="grid">
+          {
+            stories.map((story) => (
+              <article class="card">
+                <p class="stage">{story.stage}</p>
+                <h3>{story.name}</h3>
+                <p class="location">{story.location}</p>
+                <p>{story.summary}</p>
+              </article>
+            ))
+          }
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f7f3ed;
+    color: #211b16;
+  }
+
+  main {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+  }
+
+  .hero {
+    min-height: 70vh;
+    display: grid;
+    align-content: center;
+    gap: 1rem;
+  }
+
+  .eyebrow,
+  .stage {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #806042;
+  }
+
+  h1 {
+    max-width: 760px;
+    font-size: clamp(2.5rem, 7vw, 5.6rem);
+    line-height: 0.95;
+    margin: 0;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+  }
+
+  p {
+    max-width: 680px;
+    line-height: 1.7;
+    font-size: 1.05rem;
+  }
+
+  a {
+    width: fit-content;
+    padding: 0.9rem 1.2rem;
+    background: #211b16;
+    color: white;
+    text-decoration: none;
+    border-radius: 999px;
+    font-weight: 700;
+  }
+
+  .stories {
+    padding: 4rem 0;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .card {
+    background: white;
+    border-radius: 1.5rem;
+    padding: 1.4rem;
+    box-shadow: 0 16px 40px rgba(33, 27, 22, 0.08);
+  }
+
+  .card h3 {
+    font-size: 1.7rem;
+    margin: 0.4rem 0;
+  }
+
+  .location {
+    color: #6b625a;
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 800px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
