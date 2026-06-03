@@ -1,158 +1,549 @@
 ---
+const meta = {
+  title: "SAUTI KWA UKUTA",
+  subtitle: "A Gender-Sensitive Lived Narratives and Resources Hub",
+  publisher: "Students For Sensible Drug Policy (SSDP International) Kenya Chapter",
+  support: "The global Support.Don't Punish Campaign and Women and Harm Reduction International Network",
+  published: "June 2026 — Nairobi, Kenya",
+};
+
 const stories = [
   {
-    name: "Grace",
-    stage: "Recovery",
-    location: "Nairobi",
-    summary:
-      "Grace found support through counseling, family care, and a local recovery group. Her story shows that recovery is possible one day at a time.",
-  },
-  {
-    name: "Brian",
-    stage: "Seeking help",
-    location: "Kiambu",
-    summary:
-      "Brian is learning to rebuild trust, avoid harmful environments, and ask for help before things become overwhelming.",
-  },
-  {
-    name: "Amina",
-    stage: "Supporting others",
-    location: "Mombasa",
-    summary:
-      "After recovery, Amina now encourages young people to speak early, seek safe help, and believe they are not alone.",
+    id: "kosa-sio-ruhusa",
+    title: "KOSA SIO RUHUSA",
+    label: "Campus & Institutional Violence",
+    location: "University Campus, Kenya",
+    narrator: "Anonymous — Final-Year University Student",
+    pullQuote: "The university's zero-tolerance policy didn't protect me; it gave a predator complete power to blackmail and extort me because he knew I had no voice.",
+    narrative: [
+      "My relationship with weed is very interesting. I don't smoke it every day, but it helps me get the urge to eat food sometimes and that's what I love to use it for. When I was in my final year at the University, I used to use weed in some of the evenings just to cope with intense academic anxiety and stress.",
+      "One night we were coming back from eating supper and I was in the company of a few friends from class outside my hostel. While going in, I accidentally dropped my lighter at the entrance and the Custodian saw it. He asked me to provide my student's ID, go to my room, and bring him whatever I was smoking. I didn't have cannabis at that time, but I had the scent on me and he had the lighter and my student's ID, which he swore could be used as evidence — I was going to be suspended for 1,000 academic days.",
+      "Instead of reporting the incident right away, he cornered me and threatened me. He explicitly told me that if I didn't give him a sexual favor right then, he would call the security team and write a note that would be used by the Administration for my 1,000 academic day suspension. I was paralyzed with fear. I was wrong, I admit that, but the university's zero-tolerance policy didn't protect me; it gave a predator complete power to blackmail and extort me because he knew I had no voice.",
+      "That same night, I decided to go back to my parents' house — at least I had a place I could still go to. What if I didn't have a place to go to? What choices could I make? Am I safe anywhere as a woman using drugs? The bottom line is someone in the position of Authority took advantage of my vulnerability. That kind of abuse of power is completely separate from the school rules I had violated, and should never have happened. They should have given me a chance. I made a mistake, but it did not permit him to weaponize my vulnerability against me.",
+    ],
+    advocacy: {
+      heading: "Advocating for Health-Centered Campus Policies",
+      body: "University drug policies should focus more on health-centered policies that balance campus regulations with student well-being. By adopting an evidence-based prevention and harm reduction approach, institutions can create supportive environments where students feel safe seeking help for academic stress, substance use, or harassment without fearing isolation.",
+    },
+    support: "If you are a student navigating a difficult situation or feeling overwhelmed, you are not alone. You can connect confidentially with SSDP Kenya to find peer support, access friendly mental health resources, and safely map out your next steps.",
   },
 ];
+
+const consent = "In strict alignment with global harm reduction documentation standards and ethical media procedures, all campaign imagery associated with these narratives utilizes alternative, non-identifying photography. No facial features, specific tracking locations, or identifiable landmarks are published. Every piece of documentation prioritizes the absolute safety, digital privacy, and opt-out imperatives of our community participants.";
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Fuzzy Waddle | Recovery Stories</title>
-    <meta
-      name="description"
-      content="Stories of vulnerable people recovering from drug use, seeking support, and rebuilding their lives."
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{meta.title} | {meta.subtitle}</title>
+    <meta name="description" content="A gender-sensitive lived narratives and resources hub centering the real voices and resilience of young women, gender-diverse people, and students in Kenya who use drugs." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet" />
   </head>
 
   <body>
+
+    <!-- Top bar -->
+    <div class="top-bar">
+      <span>{meta.publisher}</span>
+      <span class="separator">·</span>
+      <span>{meta.published}</span>
+    </div>
+
     <main>
+
+      <!-- Hero -->
       <section class="hero">
-        <p class="eyebrow">Recovery stories</p>
-        <h1>Real stories. Human dignity. Hope after drugs.</h1>
-        <p>
-          A simple public site for sharing careful, respectful stories from people affected by drug use,
-          recovery, and community support.
-        </p>
-        <a href="#stories">Read stories</a>
-      </section>
-
-      <section id="stories" class="stories">
-        <h2>Featured stories</h2>
-
-        <div class="grid">
-          {
-            stories.map((story) => (
-              <article class="card">
-                <p class="stage">{story.stage}</p>
-                <h3>{story.name}</h3>
-                <p class="location">{story.location}</p>
-                <p>{story.summary}</p>
-              </article>
-            ))
-          }
+        <div class="hero-inner">
+          <p class="kicker">Lived Narratives &amp; Resources Hub</p>
+          <h1>
+            <span class="swahili">Sauti Kwa Ukuta</span>
+          </h1>
+          <p class="subtitle">{meta.subtitle}</p>
+          <p class="intro">
+            This is a completely safe, anonymous, and judgment-free space dedicated to centering
+            the real voices, challenges, and immense resilience of young women, gender-diverse
+            people, young people in our community and students in higher learning institutions
+            in Kenya who use drugs.
+          </p>
+          <p class="mission-line">
+            Punitive policies, harsh institutional rules, and societal shame do not heal our communities;
+            they force women into hiding, cut them off from life-saving healthcare, and leave them
+            vulnerable to violence and exploitation. <strong>Every woman deserves health, safety, dignity, and human rights.</strong>
+          </p>
+          <a href="#stories" class="cta">Read the stories</a>
+        </div>
+        <div class="hero-ornament" aria-hidden="true">
+          <div class="circle c1"></div>
+          <div class="circle c2"></div>
+          <div class="line-v"></div>
         </div>
       </section>
+
+      <!-- Consent notice -->
+      <div class="consent-band">
+        <span class="consent-icon">&#9679;</span>
+        <p>{consent}</p>
+      </div>
+
+      <!-- Stories -->
+      <section id="stories" class="stories-section">
+        <div class="section-label">Our Stories</div>
+
+        {stories.map((story) => (
+          <article class="story-block" id={story.id}>
+
+            <div class="story-header">
+              <span class="story-label">{story.label}</span>
+              <h2 class="story-title">{story.title}</h2>
+              <div class="story-meta">
+                <span>{story.narrator}</span>
+                <span class="dot">·</span>
+                <span>{story.location}</span>
+              </div>
+            </div>
+
+            <div class="story-body">
+              <blockquote class="pull-quote">
+                <span class="open-quote">"</span>
+                {story.pullQuote}
+                <span class="close-quote">"</span>
+              </blockquote>
+
+              <div class="narrative-text">
+                {story.narrative.map((para) => (
+                  <p>{para}</p>
+                ))}
+              </div>
+            </div>
+
+            <div class="advocacy-block">
+              <div class="advocacy-inner">
+                <h3>{story.advocacy.heading}</h3>
+                <p>{story.advocacy.body}</p>
+              </div>
+              <div class="support-note">
+                <span class="support-icon">❧</span>
+                <p>{story.support}</p>
+              </div>
+            </div>
+
+          </article>
+        ))}
+      </section>
+
+      <!-- Supported by -->
+      <section class="support-section">
+        <p class="support-label">Supported by</p>
+        <p class="support-names">{meta.support}</p>
+      </section>
+
     </main>
+
+    <footer>
+      <p>{meta.title} &nbsp;·&nbsp; {meta.published}</p>
+      <p>You are not alone, and your voice matters.</p>
+    </footer>
+
   </body>
 </html>
 
 <style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream:    #f5efe6;
+    --paper:    #faf7f2;
+    --ink:      #1c150e;
+    --ink-soft: #3d3328;
+    --muted:    #7a6a58;
+    --rule:     #d9cfc4;
+    --terracot: #8b3a2a;
+    --rust:     #b5492f;
+    --warm:     #c9825a;
+    --highlight:#fff4e0;
+  }
+
+  html { scroll-behavior: smooth; }
+
   body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f7f3ed;
-    color: #211b16;
+    font-family: 'Source Serif 4', Georgia, serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-weight: 300;
+    line-height: 1.85;
   }
 
-  main {
-    width: min(1100px, 92%);
-    margin: 0 auto;
+  /* ── TOP BAR ─────────────────────────────────── */
+  .top-bar {
+    background: var(--ink);
+    color: #c8bfb4;
+    font-family: 'Source Serif 4', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 0.55rem 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
   }
 
+  .separator { opacity: 0.4; }
+
+  /* ── MAIN ────────────────────────────────────── */
+  main { width: min(860px, 92%); margin: 0 auto; }
+
+  /* ── HERO ────────────────────────────────────── */
   .hero {
-    min-height: 70vh;
+    position: relative;
+    min-height: 90vh;
     display: grid;
     align-content: center;
-    gap: 1rem;
+    padding: 7rem 0 5rem;
+    overflow: hidden;
   }
 
-  .eyebrow,
-  .stage {
+  .hero-inner { position: relative; z-index: 2; }
+
+  .hero-ornament {
+    position: absolute;
+    top: 0; right: -6rem;
+    width: 420px; height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid var(--rule);
+  }
+
+  .c1 { width: 340px; height: 340px; top: 8%; right: 20px; }
+  .c2 { width: 180px; height: 180px; top: 18%; right: 100px; background: rgba(139,58,42,0.04); border: none; }
+
+  .line-v {
+    position: absolute;
+    right: 140px; top: 0; bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--rule) 30%, var(--rule) 70%, transparent);
+  }
+
+  .kicker {
+    font-size: 0.72rem;
+    letter-spacing: 0.28em;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
-    font-size: 0.78rem;
-    font-weight: 700;
-    color: #806042;
+    color: var(--terracot);
+    font-weight: 400;
+    margin-bottom: 1.2rem;
   }
 
   h1 {
-    max-width: 760px;
-    font-size: clamp(2.5rem, 7vw, 5.6rem);
-    line-height: 0.95;
-    margin: 0;
-  }
-
-  h2 {
-    font-size: clamp(2rem, 4vw, 3.5rem);
-  }
-
-  p {
-    max-width: 680px;
-    line-height: 1.7;
-    font-size: 1.05rem;
-  }
-
-  a {
-    width: fit-content;
-    padding: 0.9rem 1.2rem;
-    background: #211b16;
-    color: white;
-    text-decoration: none;
-    border-radius: 999px;
+    font-family: 'Playfair Display', 'Georgia', serif;
     font-weight: 700;
+    line-height: 0.92;
+    margin-bottom: 1rem;
   }
 
-  .stories {
-    padding: 4rem 0;
+  .swahili {
+    display: block;
+    font-size: clamp(3.5rem, 9vw, 7.5rem);
+    font-style: italic;
+    color: var(--ink);
+    letter-spacing: -0.02em;
   }
 
-  .grid {
+  .subtitle {
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 2rem;
+    font-weight: 400;
+    max-width: none;
+  }
+
+  .intro {
+    font-size: 1.15rem;
+    max-width: 680px;
+    color: var(--ink-soft);
+    margin-bottom: 1.4rem;
+    line-height: 1.9;
+  }
+
+  .mission-line {
+    font-size: 1rem;
+    max-width: 620px;
+    color: var(--muted);
+    margin-bottom: 2.5rem;
+    font-style: italic;
+  }
+
+  .mission-line strong {
+    color: var(--terracot);
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  .cta {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: var(--ink);
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-family: 'Source Serif 4', serif;
+    font-weight: 400;
+    transition: background 0.2s;
+  }
+
+  .cta:hover { background: var(--terracot); }
+
+  /* ── CONSENT BAND ────────────────────────────── */
+  .consent-band {
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    background: var(--cream);
+    padding: 1.4rem 2rem;
+    display: flex;
+    gap: 1.2rem;
+    align-items: flex-start;
+    margin: 0 calc((92vw - min(860px, 92%)) / -2);
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .consent-icon {
+    color: var(--rust);
+    font-size: 0.55rem;
+    margin-top: 0.55rem;
+    flex-shrink: 0;
+  }
+
+  .consent-band p {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 820px;
+    margin: 0 auto;
+  }
+
+  /* ── STORIES SECTION ─────────────────────────── */
+  .stories-section {
+    padding: 5rem 0;
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--terracot);
+    font-weight: 400;
+    margin-bottom: 3rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* ── STORY BLOCK ─────────────────────────────── */
+  .story-block {
+    margin-bottom: 5rem;
+  }
+
+  .story-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .story-label {
+    display: inline-block;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--warm);
+    font-weight: 400;
+    border: 1px solid var(--warm);
+    padding: 0.25rem 0.7rem;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+  }
+
+  .story-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 0.8rem;
+  }
+
+  .story-meta {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    font-size: 0.82rem;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+  }
+
+  .dot { opacity: 0.4; }
+
+  /* ── STORY BODY ──────────────────────────────── */
+  .story-body {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    margin-bottom: 2.5rem;
+    align-items: start;
   }
 
-  .card {
-    background: white;
-    border-radius: 1.5rem;
-    padding: 1.4rem;
-    box-shadow: 0 16px 40px rgba(33, 27, 22, 0.08);
+  .pull-quote {
+    position: sticky;
+    top: 2rem;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: var(--terracot);
+    border-left: 3px solid var(--terracot);
+    padding-left: 1.2rem;
+    quotes: none;
   }
 
-  .card h3 {
-    font-size: 1.7rem;
-    margin: 0.4rem 0;
+  .open-quote,
+  .close-quote {
+    font-size: 2rem;
+    line-height: 0;
+    vertical-align: -0.4em;
+    color: var(--rust);
+    opacity: 0.5;
   }
 
-  .location {
-    color: #6b625a;
-    font-size: 0.95rem;
+  .open-quote { margin-right: 0.1em; }
+  .close-quote { margin-left: 0.1em; }
+
+  .narrative-text p {
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    line-height: 1.95;
+    margin-bottom: 1.3rem;
+    max-width: none;
   }
 
-  @media (max-width: 800px) {
-    .grid {
+  /* ── ADVOCACY ────────────────────────────────── */
+  .advocacy-block {
+    border-top: 1px solid var(--rule);
+    padding-top: 2rem;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+
+  .advocacy-inner h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.8rem;
+    font-style: italic;
+  }
+
+  .advocacy-inner p {
+    font-size: 0.92rem;
+    color: var(--muted);
+    line-height: 1.8;
+    max-width: none;
+  }
+
+  .support-note {
+    background: var(--highlight);
+    border: 1px solid #e8d8b0;
+    border-radius: 2px;
+    padding: 1.2rem 1.4rem;
+    display: flex;
+    gap: 0.8rem;
+    align-items: flex-start;
+  }
+
+  .support-icon {
+    color: var(--warm);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    line-height: 1.6;
+  }
+
+  .support-note p {
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    line-height: 1.75;
+    max-width: none;
+  }
+
+  /* ── SUPPORT SECTION ─────────────────────────── */
+  .support-section {
+    border-top: 1px solid var(--rule);
+    padding: 3rem 0 4rem;
+    text-align: center;
+  }
+
+  .support-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.8rem;
+    max-width: none;
+  }
+
+  .support-names {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* ── FOOTER ──────────────────────────────────── */
+  footer {
+    background: var(--ink);
+    color: #8a7e72;
+    text-align: center;
+    padding: 2.5rem 1rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    line-height: 2.2;
+  }
+
+  footer p { max-width: none; color: inherit; }
+
+  /* ── RESPONSIVE ──────────────────────────────── */
+  @media (max-width: 700px) {
+    .story-body {
       grid-template-columns: 1fr;
+      gap: 2rem;
     }
+
+    .pull-quote {
+      position: static;
+      font-size: 1.1rem;
+    }
+
+    .advocacy-block {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .hero-ornament { display: none; }
   }
 </style>
