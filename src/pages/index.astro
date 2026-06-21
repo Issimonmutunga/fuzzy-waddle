@@ -14,6 +14,7 @@ const stories = [
     label: "Campus & Institutional Violence",
     location: "University Campus, Kenya",
     narrator: "Anonymous — University Student",
+    font: "'Caveat', cursive",
     pullQuote: "The intense stress of that whole situation made me drink even more alcohol just to numb the constant anxiety. I honestly don't know if I'll ever graduate. But this is my first step toward fixing things: sharing my story.",
     narrative: [
       "Housekeepers were doing a maintenance check on a random Tuesday and I was caught in my university hostel room with a couple of empty alcohol bottles. Some of the bottles were just for aesthetics — I use wine bottles as flower vessels — and two were mine, I have to admit that. I wasn't given a chance to explain myself and the bottles were also empty, so… I was summarily evicted from the room on the spot.",
@@ -33,6 +34,7 @@ const stories = [
     label: "Harm Reduction & Recovery",
     location: "Nairobi, Kenya",
     narrator: "Anonymous — Small Business Owner, Age 26",
+    font: "'Kalam', cursive",
     pullQuote: "Methadone gave me my function back. It took away the agonizing withdrawal symptoms and also the constant craving in my brain. I gained the stability to plan — and look at me now. I'm running my own business.",
     narrative: [
       "I am twenty-six years old, and right now, I run a small, busy stall in Nairobi selling smocha. The best smocha in my mtaa by the way. Smocha is basically chapati wrapped around smoky sausage with kachumbari. I go the extra mile with my smocha — I add ketchup and avocado. That's why mine is the best. It is my honest hustle, and I love it.",
@@ -52,6 +54,7 @@ const stories = [
     label: "Campus & Institutional Violence",
     location: "University Campus, Kenya",
     narrator: "Anonymous — Final-Year University Student",
+    font: "'Shadows Into Light', cursive",
     pullQuote: "The university's zero-tolerance policy didn't protect me; it gave a predator complete power to blackmail and extort me because he knew I had no voice.",
     narrative: [
       "My relationship with weed is very interesting. I don't smoke it every day, but it helps me get the urge to eat food sometimes and that's what I love to use it for. When I was in my final year at the University, I used to use weed in some of the evenings just to cope with intense academic anxiety and stress. At this point, I had moved from staying with my parents to the University hostel. This was to save time spent commuting and easily access the Library. I loved our Library.",
@@ -71,6 +74,7 @@ const stories = [
     label: "Profiling & Gender-Based Violence",
     location: "Westlands, Nairobi, Kenya",
     narrator: "Anonymous — Gender-Diverse Person (They/Them)",
+    font: "'Patrick Hand', cursive",
     pullQuote: "The danger for us doesn't come from the substances; it comes from the system. I was completely sober and calm, but the stigma around who I am and what was in my bag gave people in power a license to abuse me.",
     narrative: [
       "I am a gender-diverse person; my personal pronouns are They/Them. I get bashed about my pronouns a lot, but I really don't care. I use drugs occasionally. I am incredibly careful about it; I eat healthy, drink a lot of water, I exercise (recently enrolled in a gym), I take care of my mental health, and also recently enrolled for a new course. I don't have an addiction and I don't use substances to escape.",
@@ -90,6 +94,7 @@ const stories = [
     label: "Profiling & Residential Harassment",
     location: "Nairobi, Kenya",
     narrator: "Anonymous — Visual Artist & Fine Arts Student",
+    font: "'Architects Daughter', cursive",
     pullQuote: "I won't let his profiling push me out of a space I love. My studio remains a place for creation, and we are going to keep making art, regardless of his unnecessary checks at the gate.",
     narrative: [
       "I have been drawing and painting since I was a little girl; I strongly believe I was born with a brush in hand. I am a visual artist, and I also study fine arts at the University. My apartment is also my studio, and this is my sanctuary. I love, love the smell of turpentine — my whole apartment smells like it. My canvas comes to life here, and my soul feels completely free. I use my art to speak of body positivity and also the beauty of our community. My artist friends also come to my studio and we create beautiful pieces. I also identify as a WUD (Woman Using Drugs).",
@@ -116,7 +121,7 @@ const consent = "In strict alignment with global harm reduction documentation st
     <meta name="description" content="A gender-sensitive lived narratives and resources hub centering the real voices and resilience of young women, gender-diverse people, and students in Kenya who use drugs." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&family=Caveat:wght@400;600&family=Kalam:wght@300;400&family=Shadows+Into+Light&family=Patrick+Hand&family=Architects+Daughter&display=swap" rel="stylesheet" />
   </head>
 
   <body>
@@ -194,7 +199,7 @@ const consent = "In strict alignment with global harm reduction documentation st
                 <span class="close-quote">"</span>
               </blockquote>
 
-              <div class="narrative-text">
+              <div class="narrative-text" style={`font-family: ${story.font};`}>
                 {story.narrative.map((para) => (
                   <p>{para}</p>
                 ))}
@@ -571,11 +576,11 @@ const consent = "In strict alignment with global harm reduction documentation st
   .close-quote { margin-left: 0.1em; }
 
   .narrative-text p {
-    font-size: 1.08rem;
+    font-size: 1.18rem;
     font-weight: 400;
     color: var(--ink-soft);
-    line-height: 1.95;
-    margin-bottom: 1.3rem;
+    line-height: 2.05;
+    margin-bottom: 1.4rem;
     max-width: none;
   }
 
